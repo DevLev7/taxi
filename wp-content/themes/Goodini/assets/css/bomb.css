@@ -1,0 +1,217 @@
+.bombPopup.gift {
+    display: none;
+    position: fixed;
+    bottom: 6rem;
+    left: 2rem;
+    width: 120px;
+    height: 120px;
+    z-index: 1000
+}
+.bombPopup.gift .close {
+    position: absolute;
+    top: -15px;
+    left: 0px;
+    line-height: 0;
+    background: #fff;
+    border-radius: 50%;
+    padding: 10px;
+    opacity: 1;
+    cursor: pointer;
+    z-index: 100
+}
+.bombPopup.gift .close svg {
+    fill: var(--dark);
+}
+.bombPopup.gift .close:hover {
+    background: var(--dark);
+}
+.bombPopup.gift .close:hover svg {
+    fill: #fff;
+}
+.bombPopup.gift .gift_wait {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    text-align: center;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 16px;
+    padding: 0 1rem;
+    line-height: 1.2;
+}
+.bombPopup.gift .gift_wait::before, 
+.bombPopup.gift .gift_wait::after {
+    position: absolute;
+    content: "";
+    display: block;
+    border: 1px solid var(--dark);
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.bombPopup.gift .gift_wait::before {
+	animation: push1 2s infinite 0s;
+	transform: translate(-50%,-50%) scale(0.75);
+}
+.bombPopup.gift .gift_wait::after {
+	animation: push2 2s infinite 0s;
+	transform: translate(-50%,-50%) scale(1.5);
+}
+@keyframes push1 {
+0%{
+	transform: translate(-50%,-50%) scale(0.75);
+	opacity:0.7;
+}
+100%{
+	transform: translate(-50%,-50%) scale(1.25);
+	opacity:0;
+}
+}
+@keyframes push2 {
+0%{
+	transform: translate(-50%,-50%) scale(1);
+	opacity:0.5;
+}
+100%{
+	transform: translate(-50%,-50%) scale(1.5);
+	opacity:0;
+}
+}
+@keyframes bomb {
+0%{
+	transform: scale(1);
+}
+50%{
+	transform: scale(1.125);
+}
+100%{
+	transform: scale(1);
+}
+}
+.bombPopup.gift .gift_wait .counter {
+    font-size: 2.5rem;
+    line-height: 1;
+    font-weight: var(--f1wb);
+}
+.bomb_image {
+    position: absolute;
+    z-index: -1;
+    top: 9%;
+    left: 14%;
+	animation: bomb 2s infinite 0s;
+}
+.bombPopup.gift .bombbtn {
+    position: absolute;
+    top: 90%;
+    left: 0;
+    font-size: 14px;
+    line-height: 1;
+    padding: 0.5rem;
+    width: 100%;
+    color: #fff!important;
+    border: none;
+    border-radius: 0.5rem;
+    display: block;
+    text-align: center;
+}
+.bombPopup.gift a.bombbtn:hover {
+	box-shadow: none;
+}
+.bombPopup.gift .gift_wait .bombbtn svg {
+    position: absolute;
+    fill: #fff;
+    width: 28px;
+    height: 28px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+	opacity:0;
+}
+.bombPopup.gift .gift_wait .bombbtn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(var(--color2),transparent);
+	opacity:0;
+}
+.bombPopup.gift .gift_wait:hover .bombbtn svg,
+.bombPopup.gift .gift_wait:hover .bombbtn::before  {
+	opacity:1;
+}
+
+.bombPopup.gift .gift_wait svg.circle {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 110px;
+    height: 110px;
+    -webkit-transform: rotateY(0) rotateZ(-90deg);
+    transform: rotateY(0) rotateZ(-90deg)
+}
+
+.bombPopup.gift .gift_wait svg.circle circle {
+    stroke-dasharray: 314px;
+    stroke-dashoffset: 0;
+    stroke-linecap: round;
+    stroke-width: 3px;
+    stroke: var(--color2);
+    fill: none;	
+}
+
+@-webkit-keyframes countdown {
+    from {stroke-dashoffset: 0}
+    to {stroke-dashoffset: 314px}
+}
+@keyframes countdown {
+    from {stroke-dashoffset: 0}
+    to {stroke-dashoffset: 314px}
+}
+
+.bombPopup.gift .gift_take {
+    display: none;
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%
+}
+
+.bombPopup.gift .gift_take .image {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 4rem;
+}
+
+.dynamic-image .dynamic-img img {
+    opacity: .5
+}
+
+.dynamic-image:hover {
+    background: #f5f5f6;
+    color: #2f3a4f;
+    text-decoration: none
+}
+
+.dynamic-image:hover .dynamic-img {
+    background-color: #fce300
+}
+
+.dynamic-image:hover .dynamic-img img {
+    opacity: 1
+}

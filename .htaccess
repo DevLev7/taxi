@@ -1,0 +1,27 @@
+# Раскомментировать при вкючении https на сайте + переадресация с www на без www
+
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteCond %{HTTPS} off
+	RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+	RewriteBase /
+	RewriteCond %{HTTP_HOST} ^www.(.*)$ [NC]
+	RewriteRule ^(.*)$ https://%1/$1 [R=301,L] # END
+</IfModule>
+
+
+# BEGIN WordPress
+# Директивы (строки) между `BEGIN WordPress` и `END WordPress`
+# созданы автоматически и подлежат изменению только через фильтры WordPress.
+# Сделанные вручную изменения между этими маркерами будут перезаписаны.
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteBase /taxi/
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /taxi/index.php [L]
+</IfModule>
+
+# END WordPress

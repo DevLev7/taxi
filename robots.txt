@@ -1,0 +1,48 @@
+User-agent: *
+Disallow: /wp-feed
+Disallow: /wp-includes
+Disallow: /wp-content/cache
+Disallow: /wp-content/plugins
+Disallow: /wp-content/themes
+Disallow: /wp-admin
+Disallow: /cgi-bin
+Disallow: /*?
+Disallow: /wp-
+Disallow: *?s=
+Disallow: *&s=
+Disallow: /search
+Disallow: /author
+Disallow: /users
+Disallow: /team
+Disallow: /archive
+Disallow: /tag
+Disallow: */trackback
+Disallow: *?attachment_id=
+Disallow: */feed
+Disallow: */rss
+Disallow: */embed
+Disallow: */page
+Disallow: */thanks
+Disallow: */policy
+Disallow: */privacy-policy
+Disallow: */404
+Disallow: /xmlrpc.php
+Disallow: *utm=
+Disallow: *openstat=
+
+Allow: */uploads
+Allow: /*/*.js
+Allow: /*/*.css
+Allow: /wp-*.png
+Allow: /wp-*.jpg
+Allow: /wp-*.jpeg
+Allow: /wp-*.gif
+Allow: /wp-*.svg
+Allow: /wp-*.pdf
+Allow: /wp-admin/admin-ajax.php
+
+
+Clean-Param: utm_source&utm_medium&utm_campaign 
+Clean-Param: openstat
+
+Sitemap: /sitemap_index.xml
